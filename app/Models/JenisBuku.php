@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class JenisBuku extends Model
+{
+    use HasFactory;
+    protected $table = 'jenis_buku';
+    protected $primaryKey = 'id_jenis_buku';
+    
+    protected function buku(){
+        return $this->hasMany(Buku::class);
+    }
+    protected $fillable = [
+        'nama_jenis_buku'
+    ];
+    public $timestamps = false;
+}
